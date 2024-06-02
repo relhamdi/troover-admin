@@ -40,7 +40,7 @@ class ApiDemand {
     if (response.statusCode == 200) {
       Demand newDemand = Demand.fromJson(json.decode(response.body));
       newDemand.domains = demand.domains;
-      await addDemandDomains(token, newDemand);
+      // await addDemandDomains(token, newDemand);
       return newDemand;
     } else {
       throw Exception('Failed to add demand');
@@ -57,7 +57,7 @@ class ApiDemand {
       await deleteDemandDomains(token, demand);
       Demand newDemand = Demand.fromJson(json.decode(response.body));
       newDemand.domains = demand.domains;
-      await addDemandDomains(token, newDemand);
+      // await addDemandDomains(token, newDemand);
       return newDemand;
     } else {
       throw Exception('Failed to update demand ${demand.id}');
