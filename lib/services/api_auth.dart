@@ -13,7 +13,7 @@ class ApiAuth {
     );
 
     if (response.statusCode == 200) {
-      print(jsonDecode(response.body));
+      // print(jsonDecode(response.body));
       return jsonDecode(response.body)['token'];
     } else {
       throw Exception('Failed to log in $email');
