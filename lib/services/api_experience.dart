@@ -14,7 +14,7 @@ class ApiExperience {
       List<dynamic> body = json.decode(response.body);
       return body.map((dynamic item) => Experience.fromJson(item)).toList();
     } else {
-      throw Exception('Failed to load experiences');
+      throw Exception('${response.statusCode} - Failed to load experiences');
     }
   }
 
@@ -27,7 +27,7 @@ class ApiExperience {
     if (response.statusCode == 200) {
       return Experience.fromJson(json.decode(response.body));
     } else {
-      throw Exception('Failed to add experience');
+      throw Exception('${response.statusCode} - Failed to add experience');
     }
   }
 
@@ -40,7 +40,8 @@ class ApiExperience {
     if (response.statusCode == 200) {
       return Experience.fromJson(json.decode(response.body));
     } else {
-      throw Exception('Failed to update experience ${experience.id}');
+      throw Exception(
+          '${response.statusCode} - Failed to update experience ${experience.id}');
     }
   }
 
@@ -52,7 +53,8 @@ class ApiExperience {
     if (response.statusCode == 200) {
       return true;
     } else {
-      throw Exception('Failed to delete experience ${experience.id}');
+      throw Exception(
+          '${response.statusCode} - Failed to delete experience ${experience.id}');
     }
   }
 }

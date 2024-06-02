@@ -16,7 +16,7 @@ class ApiAuth {
       // print(jsonDecode(response.body));
       return jsonDecode(response.body)['token'];
     } else {
-      throw Exception('Failed to log in $email');
+      throw Exception('${response.statusCode} - Failed to log in $email');
     }
   }
 
@@ -29,7 +29,7 @@ class ApiAuth {
     if (response.statusCode == 200) {
       return User.fromJson(json.decode(response.body));
     } else {
-      throw Exception('Failed to load user');
+      throw Exception('${response.statusCode} - Failed to load user');
     }
   }
 }

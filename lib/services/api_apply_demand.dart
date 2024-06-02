@@ -14,7 +14,7 @@ class ApiApplyDemand {
       List<dynamic> body = json.decode(response.body);
       return body.map((dynamic item) => ApplyDemand.fromJson(item)).toList();
     } else {
-      throw Exception('Failed to load applyDemands');
+      throw Exception('${response.statusCode} - Failed to load applyDemands');
     }
   }
 
@@ -30,7 +30,7 @@ class ApiApplyDemand {
     if (response.statusCode == 200) {
       return ApplyDemand.fromJson(json.decode(response.body));
     } else {
-      throw Exception('Failed to add applyDemand');
+      throw Exception('${response.statusCode} - Failed to add applyDemand');
     }
   }
 
@@ -46,7 +46,8 @@ class ApiApplyDemand {
     if (response.statusCode == 200) {
       return ApplyDemand.fromJson(json.decode(response.body));
     } else {
-      throw Exception('Failed to update applyDemand ${applyDemand.id}');
+      throw Exception(
+          '${response.statusCode} - Failed to update applyDemand ${applyDemand.id}');
     }
   }
 
@@ -61,7 +62,8 @@ class ApiApplyDemand {
     if (response.statusCode == 200) {
       return true;
     } else {
-      throw Exception('Failed to delete applyDemand ${applyDemand.id}');
+      throw Exception(
+          '${response.statusCode} - Failed to delete applyDemand ${applyDemand.id}');
     }
   }
 }

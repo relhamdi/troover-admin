@@ -13,7 +13,8 @@ class ApiSubscription {
     if (response.statusCode == 200) {
       return Subscription.fromJson(json.decode(response.body));
     } else {
-      throw Exception('Failed to load subscription $id');
+      throw Exception(
+          '${response.statusCode} - Failed to load subscription $id');
     }
   }
 
@@ -26,7 +27,7 @@ class ApiSubscription {
       List<dynamic> body = json.decode(response.body);
       return body.map((dynamic item) => Subscription.fromJson(item)).toList();
     } else {
-      throw Exception('Failed to load subscriptions');
+      throw Exception('${response.statusCode} - Failed to load subscriptions');
     }
   }
 
@@ -39,7 +40,7 @@ class ApiSubscription {
     if (response.statusCode == 200) {
       return Subscription.fromJson(json.decode(response.body));
     } else {
-      throw Exception('Failed to add subscription');
+      throw Exception('${response.statusCode} - Failed to add subscription');
     }
   }
 
@@ -51,7 +52,8 @@ class ApiSubscription {
     if (response.statusCode == 200) {
       return true;
     } else {
-      throw Exception('Failed to delete subscription ${subscription.id}');
+      throw Exception(
+          '${response.statusCode} - Failed to delete subscription ${subscription.id}');
     }
   }
 }

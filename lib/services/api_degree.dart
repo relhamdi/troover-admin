@@ -14,7 +14,7 @@ class ApiDegree {
       List<dynamic> body = json.decode(response.body);
       return body.map((dynamic item) => Degree.fromJson(item)).toList();
     } else {
-      throw Exception('Failed to load degrees');
+      throw Exception('${response.statusCode} - Failed to load degrees');
     }
   }
 
@@ -27,7 +27,7 @@ class ApiDegree {
     if (response.statusCode == 200) {
       return Degree.fromJson(json.decode(response.body));
     } else {
-      throw Exception('Failed to add degree');
+      throw Exception('${response.statusCode} - Failed to add degree');
     }
   }
 
@@ -40,7 +40,8 @@ class ApiDegree {
     if (response.statusCode == 200) {
       return Degree.fromJson(json.decode(response.body));
     } else {
-      throw Exception('Failed to update degree ${degree.id}');
+      throw Exception(
+          '${response.statusCode} - Failed to update degree ${degree.id}');
     }
   }
 
@@ -52,7 +53,8 @@ class ApiDegree {
     if (response.statusCode == 200) {
       return true;
     } else {
-      throw Exception('Failed to delete degree ${degree.id}');
+      throw Exception(
+          '${response.statusCode} - Failed to delete degree ${degree.id}');
     }
   }
 }

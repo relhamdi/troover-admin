@@ -14,7 +14,7 @@ class ApiSkill {
       List<dynamic> body = json.decode(response.body);
       return body.map((dynamic item) => Skill.fromJson(item)).toList();
     } else {
-      throw Exception('Failed to load skills');
+      throw Exception('${response.statusCode} - Failed to load skills');
     }
   }
 
@@ -27,7 +27,7 @@ class ApiSkill {
     if (response.statusCode == 200) {
       return Skill.fromJson(json.decode(response.body));
     } else {
-      throw Exception('Failed to add skill');
+      throw Exception('${response.statusCode} - Failed to add skill');
     }
   }
 
@@ -40,7 +40,8 @@ class ApiSkill {
     if (response.statusCode == 200) {
       return Skill.fromJson(json.decode(response.body));
     } else {
-      throw Exception('Failed to update skill ${skill.id}');
+      throw Exception(
+          '${response.statusCode} - Failed to update skill ${skill.id}');
     }
   }
 
@@ -52,7 +53,8 @@ class ApiSkill {
     if (response.statusCode == 200) {
       return true;
     } else {
-      throw Exception('Failed to delete skill ${skill.id}');
+      throw Exception(
+          '${response.statusCode} - Failed to delete skill ${skill.id}');
     }
   }
 }

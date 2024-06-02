@@ -14,7 +14,7 @@ class ApiInterest {
       List<dynamic> body = json.decode(response.body);
       return body.map((dynamic item) => Interest.fromJson(item)).toList();
     } else {
-      throw Exception('Failed to load interests');
+      throw Exception('${response.statusCode} - Failed to load interests');
     }
   }
 
@@ -27,7 +27,7 @@ class ApiInterest {
     if (response.statusCode == 200) {
       return Interest.fromJson(json.decode(response.body));
     } else {
-      throw Exception('Failed to add interest');
+      throw Exception('${response.statusCode} - Failed to add interest');
     }
   }
 
@@ -40,7 +40,8 @@ class ApiInterest {
     if (response.statusCode == 200) {
       return Interest.fromJson(json.decode(response.body));
     } else {
-      throw Exception('Failed to update interest ${interest.id}');
+      throw Exception(
+          '${response.statusCode} - Failed to update interest ${interest.id}');
     }
   }
 
@@ -52,7 +53,8 @@ class ApiInterest {
     if (response.statusCode == 200) {
       return true;
     } else {
-      throw Exception('Failed to delete interest ${interest.id}');
+      throw Exception(
+          '${response.statusCode} - Failed to delete interest ${interest.id}');
     }
   }
 }

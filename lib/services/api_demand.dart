@@ -27,7 +27,7 @@ class ApiDemand {
         }),
       );
     } else {
-      throw Exception('Failed to load demands');
+      throw Exception('${response.statusCode} - Failed to load demands');
     }
   }
 
@@ -43,7 +43,7 @@ class ApiDemand {
       // await addDemandDomains(token, newDemand);
       return newDemand;
     } else {
-      throw Exception('Failed to add demand');
+      throw Exception('${response.statusCode} - Failed to add demand');
     }
   }
 
@@ -60,7 +60,8 @@ class ApiDemand {
       // await addDemandDomains(token, newDemand);
       return newDemand;
     } else {
-      throw Exception('Failed to update demand ${demand.id}');
+      throw Exception(
+          '${response.statusCode} - Failed to update demand ${demand.id}');
     }
   }
 
@@ -73,7 +74,8 @@ class ApiDemand {
       bool res = await deleteDemandDomains(token, demand);
       return true && res;
     } else {
-      throw Exception('Failed to delete demand ${demand.id}');
+      throw Exception(
+          '${response.statusCode} - Failed to delete demand ${demand.id}');
     }
   }
 
@@ -95,7 +97,8 @@ class ApiDemand {
         }),
       );
     } else {
-      throw Exception('Failed to load demand-domains for demand ${demand.id}');
+      throw Exception(
+          '${response.statusCode} - Failed to load demand-domains for demand ${demand.id}');
     }
   }
 
@@ -110,7 +113,8 @@ class ApiDemand {
         ).toJson()),
       );
       if (response.statusCode != 200) {
-        throw Exception('Failed to add demand-domains for demand ${demand.id}');
+        throw Exception(
+            '${response.statusCode} - Failed to add demand-domains for demand ${demand.id}');
       }
     });
   }

@@ -14,7 +14,7 @@ class ApiResume {
       List<dynamic> body = json.decode(response.body);
       return body.map((dynamic item) => Resume.fromJson(item)).toList();
     } else {
-      throw Exception('Failed to load resumes');
+      throw Exception('${response.statusCode} - Failed to load resumes');
     }
   }
 
@@ -27,7 +27,7 @@ class ApiResume {
     if (response.statusCode == 200) {
       return Resume.fromJson(json.decode(response.body));
     } else {
-      throw Exception('Failed to add resume');
+      throw Exception('${response.statusCode} - Failed to add resume');
     }
   }
 
@@ -40,7 +40,8 @@ class ApiResume {
     if (response.statusCode == 200) {
       return Resume.fromJson(json.decode(response.body));
     } else {
-      throw Exception('Failed to update resume ${resume.id}');
+      throw Exception(
+          '${response.statusCode} - Failed to update resume ${resume.id}');
     }
   }
 
@@ -52,7 +53,8 @@ class ApiResume {
     if (response.statusCode == 200) {
       return true;
     } else {
-      throw Exception('Failed to delete resume ${resume.id}');
+      throw Exception(
+          '${response.statusCode} - Failed to delete resume ${resume.id}');
     }
   }
 }

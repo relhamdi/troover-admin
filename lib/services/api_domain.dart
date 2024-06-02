@@ -13,7 +13,7 @@ class ApiDomain {
     if (response.statusCode == 200) {
       return Domain.fromJson(json.decode(response.body));
     } else {
-      throw Exception('Failed to load domain $id');
+      throw Exception('${response.statusCode} - Failed to load domain $id');
     }
   }
 
@@ -26,7 +26,7 @@ class ApiDomain {
       List<dynamic> body = json.decode(response.body);
       return body.map((dynamic item) => Domain.fromJson(item)).toList();
     } else {
-      throw Exception('Failed to load domains');
+      throw Exception('${response.statusCode} - Failed to load domains');
     }
   }
 
@@ -39,7 +39,7 @@ class ApiDomain {
     if (response.statusCode == 200) {
       return Domain.fromJson(json.decode(response.body));
     } else {
-      throw Exception('Failed to add domain');
+      throw Exception('${response.statusCode} - Failed to add domain');
     }
   }
 
@@ -51,7 +51,8 @@ class ApiDomain {
     if (response.statusCode == 200) {
       return true;
     } else {
-      throw Exception('Failed to delete domain ${domain.id}');
+      throw Exception(
+          '${response.statusCode} - Failed to delete domain ${domain.id}');
     }
   }
 }
