@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:troover_admin/models/_models.dart';
-import 'package:troover_admin/services/base_service.dart';
+import 'package:troover_admin/services/_services.dart';
 
 class AuthProvider with ChangeNotifier {
   String? _token;

@@ -1,6 +1,6 @@
 import 'package:troover_admin/models/_models.dart';
 import 'package:troover_admin/providers/_providers.dart';
-import 'package:troover_admin/services/base_service.dart';
+import 'package:troover_admin/services/_services.dart';
 import 'package:troover_admin/utils/_utils.dart';
 
 class ResumeProvider extends GenericProvider<Resume> {

@@ -10,3 +10,4 @@ export 'api_resume.dart' show ApiResume;
 export 'api_skill.dart' show ApiSkill;
 export 'api_subscription.dart' show ApiSubscription;
 export 'api_user.dart' show ApiUser;
+export 'base_service.dart' show ApiService;
