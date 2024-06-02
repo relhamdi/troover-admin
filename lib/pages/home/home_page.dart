@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
         automaticallyImplyLeading: false, // Remove back button
         title: Center(
           child: Text(
-            'Admin Dashboard - ${userProvider.connectedUser?.firstName ?? ""}',
+            'Admin Dashboard - ${userProvider.connectedUser?.email ?? ""}',
           ),
         ),
         actions: [
