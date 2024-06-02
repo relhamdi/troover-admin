@@ -16,11 +16,12 @@ enum UserTypes {
 
 class User extends JsonSerializable {
   int id;
-  String firstName;
-  String lastName;
+  String firstname;
+  String lastname;
   String email;
   int? imageId;
   DateTime? emailVerifiedAt;
+  String password;
   bool? enabled;
   String? userType;
   DateTime createdAt;
@@ -29,11 +30,12 @@ class User extends JsonSerializable {
 
   User({
     required this.id,
-    required this.firstName,
-    required this.lastName,
+    required this.firstname,
+    required this.lastname,
     required this.email,
     this.imageId,
     this.emailVerifiedAt,
+    required this.password,
     this.enabled,
     this.userType,
     DateTime? createdAt,
@@ -49,14 +51,15 @@ class User extends JsonSerializable {
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
         id: json['id'] ?? 0,
-        firstName: json['firstname'],
-        lastName: json['lastname'],
+        firstname: json['firstname'] ?? '',
+        lastname: json['lastname'] ?? '',
         email: json['email'],
         imageId: json['imageId'],
         emailVerifiedAt: json['emailVerifiedAt'] != null
             ? DateTime.parse(json['emailVerifiedAt'])
             : null,
-        enabled: json['enable'],
+        password: json['password'] ?? '',
+        enabled: json['enable'] ?? false,
         userType: json['userType'],
         createdAt: json['createdAt'] != null
             ? DateTime.parse(json['createdAt'])
@@ -72,8 +75,8 @@ class User extends JsonSerializable {
     updatedAt = DateTime.now();
     return {
       'id': id,
-      'firstname': firstName,
-      'lastname': lastName,
+      'firstname': firstname,
+      'lastname': lastname,
       'email': email,
       'imageId': imageId,
       'emailVerifiedAt': emailVerifiedAt?.toIso8601String(),
@@ -83,5 +86,12 @@ class User extends JsonSerializable {
       'updatedAt': updatedAt.toIso8601String(),
       'color': color,
     };
+  }
+
+  Map<String, dynamic> toFullJson() {
+    Map<String, dynamic> jsonified = toJson();
+    jsonified['password'] = password;
+    jsonified['salt'] = null;
+    return jsonified;
   }
 }

@@ -22,7 +22,7 @@ class ApiUser {
     final response = await http.post(
       Uri.parse('${Constants.baseURL}/user'),
       headers: ApiUtils.getHeaders({'Authorization': 'Bearer $token'}),
-      body: jsonEncode(user.toJson()),
+      body: jsonEncode(user.toFullJson()),
     );
     if (response.statusCode == 200) {
       return User.fromJson(json.decode(response.body));

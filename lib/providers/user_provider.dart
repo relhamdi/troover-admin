@@ -8,8 +8,8 @@ class UserProvider extends GenericProvider<User> {
       : super(
           fromJson: User.fromJson,
           modelFields: [
-            ModelField<String>(label: 'firstName', fieldType: String),
-            ModelField<String>(label: 'lastName', fieldType: String),
+            ModelField<String>(label: 'firstname', fieldType: String),
+            ModelField<String>(label: 'lastname', fieldType: String),
             ModelField<String>(label: 'email', fieldType: String),
             ModelField<int>(label: 'imageId', fieldType: int),
             ModelField<DateTime>(label: 'emailVerifiedAt', fieldType: DateTime),
