@@ -14,7 +14,9 @@ class ProviderTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final userProvider = Provider.of<AuthProvider>(context);
-    provider.fetchItems(userProvider.token!);
+    if (userProvider.token != null) {
+      provider.fetchItems(userProvider.token!);
+    }
 
     List<DataColumn> columns = [];
     List<DataRow> rows = [];
