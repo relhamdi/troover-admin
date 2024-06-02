@@ -1,67 +1,19 @@
 {
-  "appTitle": "Troover",
+  "appTitle": "Troover Admin Dashboard",
   "@appTitle": {
     "description": "The title of the application"
   },
-  "hello": "Hello {userName}",
-  "@hello": {
-    "description": "A message with a single parameter",
-    "placeholders": {
-      "userName": {
-        "type": "String",
-        "example": "Bob"
-      }
-    }
-  },
-  "nMessages": "{count, plural, =0{no message} =1{1 message} other{{count} messages}}",
-  "@nMessages": {
-    "description": "Number of messages",
-    "placeholders": {
-      "count": {
-        "type": "num",
-        "format": "compact"
-      }
-    }
-  },
-  "pronoun": "{gender, select, male{he} female{she} other{they}}",
-  "@pronoun": {
-    "description": "A gendered message",
-    "placeholders": {
-      "gender": {
-        "type": "String"
-      }
-    }
-  },
-
-  "doubleTapToExit": "Tab back again to exit",
-
-  "navbarHome": "Home",
-  "navbarApplications": "Applications",
-  "navbarInbox": "Inbox",
-  "navbarSettings": "Settings",
-  "navbarSettingsUser": "Profile",
-  "navbarSettingsSystem": "System",
-
-  "themeSystem": "System Theme",
-  "themeLight": "Light Theme",
-  "themeDark": "Dark Theme",
-
-  "accountDelete": "Delete my account",
-  "accountLogout": "Log out",
-  "accountRegister":"Sign in",
-  "accountLogin":"Log in",
+  
+  "titleAccountLogin": "Log in",
 
   "errorGeneral": "Something went wrong...",
   "errorNotFoundTitle": "404",
   "errorNotFoundDesc": "It seems that you are lost...",
-  "errorIncorrectCredentials":"Email or password is incorrect",
+  "errorIncorrectCredentials": "Email or password is incorrect",
 
-  "errorString":"Error",
-  "emailString":"Email",
-  "passwordString":"Password",
-  
-  "passwordForgotten":"Forgot your password?",
-  "askNoAccount":"Don''t have an account yet?",
+  "labelError": "Error",
+  "labelEmail": "Email",
+  "labelPassword": "Password",
 
   "btnGoHome": "Go back to home screen"
 }

@@ -55,14 +55,15 @@ class _LoginPageState extends State<LoginPage> {
                     focusNode: _focusNode,
                     controller: emailController,
                     decoration: InputDecoration(
-                        labelText: AppLocalizations.of(context)!.emailString),
+                      labelText: AppLocalizations.of(context)!.labelEmail,
+                    ),
                   ),
                   const SizedBox(height: 20),
                   TextFormField(
                     controller: passwordController,
                     decoration: InputDecoration(
-                        labelText:
-                            AppLocalizations.of(context)!.passwordString),
+                      labelText: AppLocalizations.of(context)!.labelPassword,
+                    ),
                     obscureText: true,
                   ),
                 ],
@@ -101,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                   );
                 }
               },
-              child: Text(AppLocalizations.of(context)!.accountLogin),
+              child: Text(AppLocalizations.of(context)!.titleAccountLogin),
             ),
           ],
         ),

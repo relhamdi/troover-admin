@@ -14,7 +14,7 @@ class ErrorNotFoundPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.errorString),
+        title: Text(AppLocalizations.of(context)!.labelError),
       ),
       body: Center(
         child: Column(

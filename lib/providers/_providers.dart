@@ -1,5 +1,6 @@
 export 'apply_demand_provider.dart' show ApplyDemandProvider;
 export 'auth_provider.dart' show AuthProvider;
+export 'company_provider.dart' show CompanyProvider;
 export 'degree_provider.dart' show DegreeProvider;
 export 'demand_provider.dart' show DemandProvider;
 export 'domain_provider.dart' show DomainProvider;

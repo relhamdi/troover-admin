@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:troover_admin/providers/_providers.dart';
 import 'package:troover_admin/utils/_utils.dart';
@@ -36,6 +37,7 @@ class _HomePageState extends State<HomePage> {
       Provider.of<ExperienceProvider>(context),
       Provider.of<DegreeProvider>(context),
       Provider.of<SubscriptionProvider>(context),
+      Provider.of<CompanyProvider>(context),
     ];
 
     return Scaffold(
@@ -43,7 +45,7 @@ class _HomePageState extends State<HomePage> {
         automaticallyImplyLeading: false, // Remove back button
         title: Center(
           child: Text(
-            'Admin Dashboard - ${userProvider.connectedUser?.email ?? ""}',
+            '${AppLocalizations.of(context)!.appTitle} - ${userProvider.connectedUser?.email ?? ""}',
           ),
         ),
         actions: [

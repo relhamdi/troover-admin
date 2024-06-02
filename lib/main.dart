@@ -18,34 +18,37 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AuthProvider authProvider = AuthProvider();
-    UserProvider userProvider = UserProvider();
-    DomainProvider domainProvider = DomainProvider();
-    DemandProvider demandProvider = DemandProvider(
+    final AuthProvider authProvider = AuthProvider();
+    final UserProvider userProvider = UserProvider();
+    final DomainProvider domainProvider = DomainProvider();
+    final DemandProvider demandProvider = DemandProvider(
       userProvider: userProvider,
       domainProvider: domainProvider,
     );
-    ApplyDemandProvider applyDemandProvider = ApplyDemandProvider(
+    final ApplyDemandProvider applyDemandProvider = ApplyDemandProvider(
       userProvider: userProvider,
       demandProvider: demandProvider,
     );
-    ResumeProvider resumeProvider = ResumeProvider(
+    final ResumeProvider resumeProvider = ResumeProvider(
       userProvider: userProvider,
     );
-    SkillProvider skillProvider = SkillProvider(
+    final SkillProvider skillProvider = SkillProvider(
       resumeProvider: resumeProvider,
     );
-    InterestProvider interestProvider = InterestProvider(
+    final InterestProvider interestProvider = InterestProvider(
       resumeProvider: resumeProvider,
     );
-    ExperienceProvider experienceProvider = ExperienceProvider(
+    final ExperienceProvider experienceProvider = ExperienceProvider(
       resumeProvider: resumeProvider,
     );
-    DegreeProvider degreeProvider = DegreeProvider(
+    final DegreeProvider degreeProvider = DegreeProvider(
       resumeProvider: resumeProvider,
     );
-    SubscriptionProvider subscriptionProvider = SubscriptionProvider();
-
+    final SubscriptionProvider subscriptionProvider = SubscriptionProvider();
+    final CompanyProvider companyProvider = CompanyProvider(
+      userProvider: userProvider,
+      subscriptionProvider: subscriptionProvider,
+    );
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => authProvider),
@@ -59,6 +62,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => experienceProvider),
         ChangeNotifierProvider(create: (context) => degreeProvider),
         ChangeNotifierProvider(create: (context) => subscriptionProvider),
+        ChangeNotifierProvider(create: (context) => companyProvider),
       ],
       child: MaterialApp(
         restorationScopeId: Constants.scopeID,

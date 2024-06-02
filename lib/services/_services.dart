@@ -1,5 +1,6 @@
 export 'api_apply_demand.dart' show ApiApplyDemand;
 export 'api_auth.dart' show ApiAuth;
+export 'api_company.dart' show ApiCompany;
 export 'api_degree.dart' show ApiDegree;
 export 'api_demand.dart' show ApiDemand;
 export 'api_domain.dart' show ApiDomain;

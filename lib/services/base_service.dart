@@ -12,4 +12,5 @@ class ApiService {
   static final ApiExperience experience = ApiExperience();
   static final ApiDegree degree = ApiDegree();
   static final ApiSubscription subscription = ApiSubscription();
+  static final ApiCompany company = ApiCompany();
 }
