@@ -45,7 +45,7 @@ class _FormDialogState<T extends JsonSerializable>
       title: const Text('Add Item'),
       content: Form(
         key: _formKey,
-        child: Container(
+        child: SizedBox(
           width: 500,
           child: SingleChildScrollView(
             child: Column(

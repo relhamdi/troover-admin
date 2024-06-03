@@ -10,14 +10,16 @@ class DropdownWidget extends StatelessWidget {
   final SelectionType selectionType;
   final int maxItems;
 
-  DropdownWidget({
+  const DropdownWidget({
+    Key? key,
     required this.field,
     required this.formData,
     required this.onChanged,
     required this.items,
     required this.selectionType,
     required this.maxItems,
-  });
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MultiSelectDropDown(

@@ -71,8 +71,8 @@ class ApiDemand {
       headers: ApiUtils.getHeaders({'Authorization': 'Bearer $token'}),
     );
     if (response.statusCode == 200) {
-      bool res = await deleteDemandDomains(token, demand);
-      return true && res;
+      // bool res = await deleteDemandDomains(token, demand);
+      return true;
     } else {
       throw Exception(
           '${response.statusCode} - Failed to delete demand ${demand.id}');
