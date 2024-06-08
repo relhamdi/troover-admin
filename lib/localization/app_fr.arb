@@ -1,3 +1,16 @@
 {
-  "appTitle": "Troover"
+  "appTitle": "Troover Admin Dashboard",
+  
+  "titleAccountLogin": "Se connecter",
+
+  "errorGeneral": "Quelque chose d''étrange se passe...",
+  "errorNotFoundTitle": "404",
+  "errorNotFoundDesc": "vous semblez vous être perdu...",
+  "errorIncorrectCredentials": "Email ou mot de passe incorrect",
+
+  "labelError": "Erreur",
+  "labelEmail": "Email",
+  "labelPassword": "Mot de passe",
+
+  "btnGoHome": "Retourner à l''écran d''accueil"
 }
